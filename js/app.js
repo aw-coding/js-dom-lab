@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
   title.addEventListener('submit', getTitle)
   //document.getElementById('reading-list').reset()
 
+  const deleteAll = document.querySelector('#delete-button');
+  deleteAll.addEventListener('click', deleteAllEntries)
+
 
 })
 
@@ -19,14 +22,51 @@ const getTitle = (event) => {
   const list = document.querySelector('ul');
   list.appendChild(newListItem);
   document.getElementById('new-item-form').reset();
+  
 
 
   //const resultTitle = document.querySelector('#reading-list');
   //newListItem.textContent = `${event.target.title.value} ${event.target.author.value} ${event.target.category.value}`;
 }
 
+const deleteAllEntries = (event) => {
+
+  //event.preventDefault();
+  // const deleteListItems = document.querySelector('li');
+  // deleteListItems.textContent = '';
+
+  const allLiElements = document.querySelector('#reading-list'); // returns all li elements found in html. Result is an array of objects
+  allLiElements.innerHTML = ' ';
+
+  //allLiElements = []
+  //if (allLiElements.hasChildNodes()) {
+  //allLiElements.removeChild();
+  //}
+  //console.dir(allLiElements);
+  
 
 
+//   // Get the <ul> element with id="myList"
+// var list = document.getElementById("myList");
+
+// // If the <ul> element has any child nodes, remove its first child node
+// if (list.hasChildNodes()) {
+//   list.removeChild(list.childNodes[0]);
+// }
+
+}
+
+
+
+
+
+
+
+
+// doFoo.onclick = () => {
+//   const myNode = document.getElementById("foo");
+//   myNode.textContent = '';
+// }
 
 // const handleFormSubmit = (event) => {
 //   event.preventDefault();
